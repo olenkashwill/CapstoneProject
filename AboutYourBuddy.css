@@ -10,7 +10,11 @@ h1 {
 h2 { 
 	text-align: center;
 	font-family: 'Farsan', cursive;
-	font-size: 30px;
+	font-size: 40px;
+	}
 	
-	
+h3 {
+	text-align: center;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 20px;
 }
