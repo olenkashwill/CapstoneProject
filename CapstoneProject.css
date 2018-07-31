@@ -8,3 +8,16 @@ h1 {
 }
 body {background-color: #33425b;
 }
+.parallax { 
+    /* The image used */
+    background-image: url("Dog.jpg");
+
+    /* Set a specific height */
+     height: 50%; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
