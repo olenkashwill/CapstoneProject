@@ -7,6 +7,7 @@ h1 {
 	text-align: center;
 	font-size: 60px;
 	background-color: #33425b;
+	font-style: normal;
 }
 p{
 	color: #87dfd6;
@@ -17,12 +18,13 @@ p{
     margin: auto;
     text-align: center;
 	background-color: #33425b;
-	font-size: 18px;
+	font-size: 24px;
+	font-style: italic;
 }
 
 .title {
     color: #f9f8eb;
-    font-size: 18px;
+    font-size: 30px;
 }
 button {
     border: none;
