@@ -81,3 +81,13 @@
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
+
+h2 {
+	font-family: 'Indie Flower', cursive;
+	font-size: 40px;
+}
+
+h3 {
+	font-family: 'Montserrat', sans-serif;
+}
