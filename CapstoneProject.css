@@ -1,3 +1,16 @@
+h1 {  	
+	color: #87dfd6;
+	text-align: center;
+	font-family: 'Farsan', cursive;
+	font-size: 60px;
+	background-color: #33425b;
+
+}
+
+
+
+
+
 .dropdown {
     position: relative;
     display: inline-block;
