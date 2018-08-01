@@ -18,3 +18,42 @@ h3 {
 	font-family: 'Open Sans', sans-serif;
 	font-size: 20px;
 }
+
+div {
+
+ background-color: #33425b;
+}
+
+
+
+.CatDog {
+    box-sizing: border-box;
+	text-align: center;
+	margin-top: 50px;
+    margin-bottom: 50px;
+    margin-right: 900px;
+    margin-left: 900px;	
+	background-color: #38817a;
+	color: black;
+} 
+
+.MiniHorse {
+    box-sizing: border-box;
+	text-align: center;
+	margin-top: 50px;
+    margin-bottom: 50px;
+    margin-right: 800px;
+    margin-left: 800px;	
+	background-color: #38817a;
+	color: black;
+} 
+.FerretParrot {
+    box-sizing: border-box;
+	text-align: center;
+	margin-top: 50px;
+    margin-bottom: 50px;
+    margin-right: 850px;
+    margin-left: 850px;	
+	background-color: #38817a;
+	color: black;
+} 
