@@ -6,6 +6,18 @@ h1 {
 	background-color: #33425b;
 
 }
+h3 {  	
+	color: #f9f8eb;
+}
+text{
+	color: #f9f8eb;
+	font-size: 40px;
+}
+body {
+	background-color: #33425b;
+	text-align: center;
+	font-family: 'Farsan', cursive;
+}
 .topnav {
     background-color: #333;
     overflow: hidden;
@@ -79,8 +91,6 @@ h1 {
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
   display: block;
-}
-body {background-color: #33425b;
 }
 .parallax { 
     /* The image used */
