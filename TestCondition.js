@@ -85,43 +85,73 @@
 			monkey_score+=1;
 		}
 		
-		// dog = 0, cat = 1, horse = 2
 		var score_arr = [dog_score, cat_score, minihorse_score, ferret_score, parrot_score, boa_score, pig_score, monkey_score];
 		var a=Math.max(dog_score, cat_score, minihorse_score, ferret_score, parrot_score, boa_score, pig_score, monkey_score); 
 		
 		console.log(a);
-		
+		var animal = [];
 		for (var i=0; i<score_arr.length; i++) {
 			if (score_arr[i] == a) {
-				// this is your animal!!!
+				
 				if (i == 0) {
-					// you animal is a dog
+					animal.push("Dog");
 				}
 				else if (i == 1) {
-					// animal is a cat
+					animal.push("Cat");
 				}
 				else if (i ==2) {
-					// animal is a minihorse
+					animal.push("Miniature Horse");
 				}
 				else if (i ==3) {
-					// animal is a ferret
+					animal.push("Ferret");
 				}
 				else if (i ==4) {
-					// animal is a boa constrictor
+					animal.push("Parrot");
 				}
 				else if (i ==5) {
-					// animal is a parrot
+					animal.push("Boa Constrictor");
 				}
 				else if (i ==6) {
-					// animal is a potbelly pig
+					animal.push("Potbelly Pig");
 				}
 				else if (i ==7) {
-					// animal is a capuchin monkey
+					animal.push("Capuchin Monkey");
 				}				
 			}
-		}
-
+		}		
 		
+		
+		var result = ""; // our animal response that is displayed
+		result = "Your buddy is a ";
+		for (var j=0; j<animal.length - 1; j++) {
+			result += animal[j];
+			result += ", ";
+		}
+		if (animal.length== 1){
+			result += animal[animal.length - 1];
+		}
+		else {
+			result += "or ";
+			result += animal[animal.length - 1];
+		}
+		
+		
+	
+		$.ajax({
+			type: "GET",
+			url: "http://api.petfinder.com/pet.find?format=xml&key=b1773aef3c7bb7e15eb73e500fb5919c&animal=bird&location=60657",
+			success: function(result){
+				$("#div1").html(result);
+			},
+			crossDomain: true
+		});
+	
+		
+				
+		console.log(result)
+		//$("#animal").html("Your buddy is a " + animal + ".");
+		$("#animal").html(result);
+
 	  });
 	  
   });
