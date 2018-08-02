@@ -4,9 +4,21 @@ h1 {
 	font-size: 60px;
 	background-color: #33425b;
 }
+h2 {
+	font-size: 60px;
+	background-color: #33425b;
+}
+h3{
+	
+}
+p{
+	
+}
 body{
 	font-family: 'Farsan', cursive;	
 	background-color: #38817a;
+	color: #f9f8eb;
+	text-align: center;
 }
 .topnav {
     background-color: #333;
