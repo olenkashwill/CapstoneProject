@@ -138,7 +138,21 @@
 		
 		
 		var url = "https://api.petfinder.com/pet.find?format=xml&key=b1773aef3c7bb7e15eb73e500fb5919c&animal=bird&location=60657";
-		makeCorsRequest(url);
+		
+		  $.ajax({
+                url: url,
+                method: 'GET',
+				dataType: "json",
+                headers: {
+                    'Access-Control-Allow-Origin': '*'
+                },
+                success: function(response) {
+                    console.log(response);
+                }
+            });
+		
+		
+		
 		
 				
 		console.log(result)
@@ -146,6 +160,9 @@
 		$("#animal").html(result);
 
 	  });
+	  
+	 /*
+	 makeCorsRequest(url);
 	  
 	// Create the XHR object.
 	function createCORSRequest(method, url) {
@@ -187,5 +204,6 @@
 
 	  xhr.send();
 	}
+	*/
 	  
   });
