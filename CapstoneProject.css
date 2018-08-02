@@ -92,6 +92,7 @@ body {
 .dropdown:hover .dropdown-content {
   display: block;
 }
+/* The land of a million parallaxeseses, it's in the order of animals on the site */
 .parallax { 
     /* The image used */
     background-image: url("Dog.jpg");

@@ -1,22 +1,16 @@
 h1 {
 	
 	color: #87dfd6;
-	text-align: center;
-	font-family: 'Farsan', cursive;
 	font-size: 60px;
 	background-color: #33425b;
 }
 
 h2 { 
-	text-align: center;
-	font-family: 'Farsan', cursive;
-	font-size: 40px;
-	color: #38817a;
-	background-color: #87dfd6;
+	font-size: 60px;
+	background-color: #33425b;
 }
 	
 h3 {
-	text-align: center;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 20px;
 	color: #f9f8eb;
@@ -29,6 +23,8 @@ div {
 body {
 	background-color: #38817a;
 	font-family: 'Farsan', cursive;
+	text-align: center;
+	color: #f9f8eb;
 }
 
 
@@ -104,4 +100,103 @@ body {
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
   display: block;
+}
+.parallax { 
+    /* The image used */
+    background-image: url("service-dog.jpg");
+
+    /* Set a specific height */
+     height: 25%; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.parallaxa{ 
+    /* The image used */
+    background-image: url("cat.jpg");
+
+    /* Set a specific height */
+     height: 25%; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.parallaxb{ 
+    /* The image used */
+    background-image: url("horse.jpg");
+
+    /* Set a specific height */
+     height: 25%; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.parallaxc{ 
+    /* The image used */
+    background-image: url("ferret.jpg");
+
+    /* Set a specific height */
+     height: 25%; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.parallaxd{ 
+    /* The image used */
+    background-image: url("snake.jpg");
+
+    /* Set a specific height */
+     height: 25%; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.parallaxE{ 
+    /* The image used */
+    background-image: url("parrot.jpg");
+
+    /* Set a specific height */
+     height: 25%; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.parallaxf{ 
+    /* The image used */
+    background-image: url("pig.jpg");
+
+    /* Set a specific height */
+     height: 25%; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.parallaxg{ 
+    /* The image used */
+    background-image: url("monkey.jpg");
+
+    /* Set a specific height */
+     height: 25%; 
+
 }
