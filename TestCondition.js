@@ -142,7 +142,7 @@
 		  $.ajax({
                 url: url,
                 method: 'GET',
-				dataType: "json",
+				dataType: "jsonp",
                 headers: {
                     'Access-Control-Allow-Origin': '*'
                 },
