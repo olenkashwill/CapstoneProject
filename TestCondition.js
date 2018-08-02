@@ -27,16 +27,16 @@
 		  
 		if (hearing_value==1) {
 			dog_score+=1;
-			pig_score+=1;
+			pig_score+=2;
 		}
 		
 		if (visual_value==1) {
-			dog_score+=1;
+			dog_score+=2;
 			pig_score+=1;
 		}		
 		
 		if (anxiety_value==1) {
-			dog_score+=1;
+			dog_score+=2;
 			cat_score+=1;
 			ferret_score=1;
 			parrot_score=1;
@@ -44,17 +44,18 @@
 		
 		if (depression_value==1) {
 			dog_score+=1;
-			cat_score+=1;
+			cat_score+=2;
 			ferret_score+=1;
 		}
 				
 		if (ptsd_value==1) {
+			cat_score+=2;
 			dog_score+=1;
-			cat_score+=1;
+			
 		}		
 		
 		if (legs_value==1) {
-			minihorse_score+=1;
+			minihorse_score+=2;
 			monkey_score+=1;
 		}		
 		
@@ -63,14 +64,14 @@
 		}
 				
 		if (seizures_value==1) {
-			ferret_score+=1;
+			ferret_score+=2;
 			boa_score+=1;
 		}
 		
 		if (forgetful_value==1) {
 			ferret_score+=1;
 			boa_score+=1;
-			parrot_score+=1;
+			parrot_score+=2;
 		}
 		
 		if (bipolar_value==1) {
@@ -138,7 +139,7 @@
 		
 		
 		var url = "https://api.petfinder.com/pet.find?format=json&key=b1773aef3c7bb7e15eb73e500fb5919c&animal=" + animal[0] + "&location=60657";
-		
+
 		  $.ajax({
                 url: url,
                 method: 'GET',
@@ -154,22 +155,23 @@
 					var pet_name = this_pet["name"]["$t"];
 					var pet_pic = this_pet["media"]["photos"]["photo"][0]["$t"];
 					var pet_description = this_pet["description"]["$t"];
-					var pet_gender = this_pet["sex"]["$t"];
-					var pet_breed = this_pet["breeds"]["breed"];
-					var pet_size = this_pet["size"]["$t"];
-										
-					console.log(this_pet);
-					console.log(pet_name);
-					console.log(pet_breed);
-					console.log(pet_gender);
-					console.log(pet_description);
-					console.log(pet_size);					
+					var pet_contact = this_pet["contact"]["email"]["$t"];				
+					var pet_image = this_pet["media"]["photos"]["photo"][0]["$t"];
+			
+					
+					$("#name").html(pet_name);
+					$("#description").html(pet_description);
+					$("#email").html(pet_contact); 
+					$("#image").html(pet_image);
+					console.log(pet_contact);
+					$("img").attr('src',pet_image);
 				}
             });
 		
 		
-		
-		
+	
+	
+	
 				
 		console.log(result)
 		//$("#animal").html("Your buddy is a " + animal + ".");
@@ -177,49 +179,6 @@
 
 	  });
 	  
-	 /*
-	 makeCorsRequest(url);
-	  
-	// Create the XHR object.
-	function createCORSRequest(method, url) {
-	  var xhr = new XMLHttpRequest();
-	  if ("withCredentials" in xhr) {
-		// XHR for Chrome/Firefox/Opera/Safari.
-		xhr.open(method, url, true);
-	  } else if (typeof XDomainRequest != "undefined") {
-		// XDomainRequest for IE.
-		xhr = new XDomainRequest();
-		xhr.open(method, url);
-	  } else {
-		// CORS not supported.
-		xhr = null;
-	  }
-	  return xhr;
-	}
 
-	// Make the actual CORS request.
-	function makeCorsRequest(url) {
-	  // This is a sample server that supports CORS.
-
-	  var xhr = createCORSRequest('GET', url);
-	  if (!xhr) {
-		alert('CORS not supported');
-		return;
-	  }
-
-	  // Response handlers.
-	  xhr.onload = function() {
-		var text = xhr.responseText;
-		//var title = getTitle(text);
-		alert('Response from CORS request to ' + url);
-	  };
-
-	  xhr.onerror = function() {
-		alert('Woops, there was an error making the request.');
-	  };
-
-	  xhr.send();
-	}
-	*/
 	  
   });
