@@ -139,7 +139,7 @@
 	
 		$.ajax({
 			type: "GET",
-			url: "http://api.petfinder.com/pet.find?format=xml&key=b1773aef3c7bb7e15eb73e500fb5919c&animal=bird&location=60657",
+			url: "https://api.petfinder.com/pet.find?format=xml&key=b1773aef3c7bb7e15eb73e500fb5919c&animal=bird&location=60657",
 			success: function(result){
 				$("#div1").html(result);
 			},
