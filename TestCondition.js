@@ -94,28 +94,28 @@
 			if (score_arr[i] == a) {
 				
 				if (i == 0) {
-					animal.push("Dog");
+					animal.push("dog");
 				}
 				else if (i == 1) {
-					animal.push("Cat");
+					animal.push("cat");
 				}
 				else if (i ==2) {
-					animal.push("Miniature Horse");
+					animal.push("miniature horse");
 				}
 				else if (i ==3) {
-					animal.push("Ferret");
+					animal.push("ferret");
 				}
 				else if (i ==4) {
-					animal.push("Parrot");
+					animal.push("parrot");
 				}
 				else if (i ==5) {
-					animal.push("Boa Constrictor");
+					animal.push("boa constrictor");
 				}
 				else if (i ==6) {
-					animal.push("Potbelly Pig");
+					animal.push("potbelly pig");
 				}
 				else if (i ==7) {
-					animal.push("Capuchin Monkey");
+					animal.push("capuchin monkey");
 				}				
 			}
 		}		
@@ -137,7 +137,7 @@
 		
 		
 		
-		var url = "https://api.petfinder.com/pet.find?format=xml&key=b1773aef3c7bb7e15eb73e500fb5919c&animal=bird&location=60657";
+		var url = "https://api.petfinder.com/pet.find?format=json&key=b1773aef3c7bb7e15eb73e500fb5919c&animal=" + animal[0] + "&location=60657";
 		
 		  $.ajax({
                 url: url,
@@ -148,7 +148,23 @@
                 },
                 success: function(response) {
                     console.log(response);
-                }
+					var this_pet = "";
+					
+					this_pet = response["petfinder"]["pets"]["pet"][0];
+					var pet_name = this_pet["name"]["$t"];
+					var pet_pic = this_pet["media"]["photos"]["photo"][0]["$t"];
+					var pet_description = this_pet["description"]["$t"];
+					var pet_gender = this_pet["sex"]["$t"];
+					var pet_breed = this_pet["breeds"]["breed"];
+					var pet_size = this_pet["size"]["$t"];
+										
+					console.log(this_pet);
+					console.log(pet_name);
+					console.log(pet_breed);
+					console.log(pet_gender);
+					console.log(pet_description);
+					console.log(pet_size);					
+				}
             });
 		
 		
