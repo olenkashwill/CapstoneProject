@@ -27,16 +27,16 @@
 		  
 		if (hearing_value==1) {
 			dog_score+=1;
-			pig_score+=1;
+			pig_score+=2;
 		}
 		
 		if (visual_value==1) {
-			dog_score+=1;
+			dog_score+=2;
 			pig_score+=1;
 		}		
 		
 		if (anxiety_value==1) {
-			dog_score+=1;
+			dog_score+=2;
 			cat_score+=1;
 			ferret_score=1;
 			parrot_score=1;
@@ -44,17 +44,18 @@
 		
 		if (depression_value==1) {
 			dog_score+=1;
-			cat_score+=1;
+			cat_score+=2;
 			ferret_score+=1;
 		}
 				
 		if (ptsd_value==1) {
+			cat_score+=2;
 			dog_score+=1;
-			cat_score+=1;
+			
 		}		
 		
 		if (legs_value==1) {
-			minihorse_score+=1;
+			minihorse_score+=2;
 			monkey_score+=1;
 		}		
 		
@@ -63,14 +64,14 @@
 		}
 				
 		if (seizures_value==1) {
-			ferret_score+=1;
+			ferret_score+=2;
 			boa_score+=1;
 		}
 		
 		if (forgetful_value==1) {
 			ferret_score+=1;
 			boa_score+=1;
-			parrot_score+=1;
+			parrot_score+=2;
 		}
 		
 		if (bipolar_value==1) {
@@ -85,43 +86,99 @@
 			monkey_score+=1;
 		}
 		
-		// dog = 0, cat = 1, horse = 2
 		var score_arr = [dog_score, cat_score, minihorse_score, ferret_score, parrot_score, boa_score, pig_score, monkey_score];
 		var a=Math.max(dog_score, cat_score, minihorse_score, ferret_score, parrot_score, boa_score, pig_score, monkey_score); 
 		
 		console.log(a);
-		
+		var animal = [];
 		for (var i=0; i<score_arr.length; i++) {
 			if (score_arr[i] == a) {
-				// this is your animal!!!
+				
 				if (i == 0) {
-					// you animal is a dog
+					animal.push("dog");
 				}
 				else if (i == 1) {
-					// animal is a cat
+					animal.push("cat");
 				}
 				else if (i ==2) {
-					// animal is a minihorse
+					animal.push("miniature horse");
 				}
 				else if (i ==3) {
-					// animal is a ferret
+					animal.push("ferret");
 				}
 				else if (i ==4) {
-					// animal is a boa constrictor
+					animal.push("parrot");
 				}
 				else if (i ==5) {
-					// animal is a parrot
+					animal.push("boa constrictor");
 				}
 				else if (i ==6) {
-					// animal is a potbelly pig
+					animal.push("potbelly pig");
 				}
 				else if (i ==7) {
-					// animal is a capuchin monkey
+					animal.push("capuchin monkey");
 				}				
 			}
-		}
-
+		}		
 		
+		
+		var result = ""; // our animal response that is displayed
+		result = "Your buddy is a ";
+		for (var j=0; j<animal.length - 1; j++) {
+			result += animal[j];
+			result += ", ";
+		}
+		if (animal.length== 1){
+			result += animal[animal.length - 1];
+		}
+		else {
+			result += "or ";
+			result += animal[animal.length - 1];
+		}
+		
+		
+		
+		var url = "https://api.petfinder.com/pet.find?format=json&key=b1773aef3c7bb7e15eb73e500fb5919c&animal=" + animal[0] + "&location=60657";
+
+		  $.ajax({
+                url: url,
+                method: 'GET',
+				dataType: "jsonp",
+                headers: {
+                    'Access-Control-Allow-Origin': '*'
+                },
+                success: function(response) {
+                    console.log(response);
+					var this_pet = "";
+					
+					this_pet = response["petfinder"]["pets"]["pet"][0];
+					var pet_name = this_pet["name"]["$t"];
+					var pet_pic = this_pet["media"]["photos"]["photo"][0]["$t"];
+					var pet_description = this_pet["description"]["$t"];
+					var pet_contact = this_pet["contact"]["email"]["$t"];				
+					var pet_image = this_pet["media"]["photos"]["photo"][0]["$t"];
+			
+					
+					$("#name").html(pet_name);
+					$("#description").html(pet_description);
+					$("#email").html(pet_contact); 
+					$("#image").html(pet_image);
+					console.log(pet_contact);
+					$("img").attr('src',pet_image);
+				}
+            });
+		
+		
+	
+	
+	
+				
+		console.log(result)
+		//$("#animal").html("Your buddy is a " + animal + ".");
+		$("#animal").html(result);
+
 	  });
+	  
+
 	  
   });
